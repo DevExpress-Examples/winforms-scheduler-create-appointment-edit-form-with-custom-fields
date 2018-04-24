@@ -34,13 +34,13 @@
             Me.dateNavigator1 = New DevExpress.XtraScheduler.DateNavigator()
             Me.carSchedulingTableAdapter = New SimpleCustomFields.CarsDBDataSetTableAdapters.CarSchedulingTableAdapter()
             Me.carsTableAdapter = New SimpleCustomFields.CarsDBDataSetTableAdapters.CarsTableAdapter()
-            DirectCast(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.carSchedulingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.carsDBDataSet_Renamed, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.carsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.dateNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.dateNavigator1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.carSchedulingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.carsDBDataSet_Renamed, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.carsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.dateNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.dateNavigator1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' schedulerControl1
@@ -100,6 +100,7 @@
             Me.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Sunday
             Me.dateNavigator1.Location = New System.Drawing.Point(699, 0)
             Me.dateNavigator1.Name = "dateNavigator1"
+        Me.dateNavigator1.CellPadding = New System.Windows.Forms.Padding(2)
             Me.dateNavigator1.SchedulerControl = Me.schedulerControl1
             Me.dateNavigator1.Size = New System.Drawing.Size(249, 561)
             Me.dateNavigator1.TabIndex = 1
@@ -121,13 +122,13 @@
             Me.Controls.Add(Me.dateNavigator1)
             Me.Name = "Form1"
             Me.Text = "Custom Fields Example"
-            DirectCast(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.carSchedulingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.carsDBDataSet_Renamed, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.carsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.dateNavigator1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.dateNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.carSchedulingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.carsDBDataSet_Renamed, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.carsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.dateNavigator1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.dateNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
 
         End Sub

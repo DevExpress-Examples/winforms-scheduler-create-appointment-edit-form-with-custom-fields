@@ -8,7 +8,7 @@
 ' </auto-generated>
 '------------------------------------------------------------------------------
 
-'#pragma warning disable 1591
+#Disable Warning 1591
 
 Namespace SimpleCustomFields
 
@@ -48,7 +48,7 @@ Namespace SimpleCustomFields
                 AddHandler Me.Relations.CollectionChanged, schemaChangedHandler1
                 Return
             End If
-            Dim strSchema As String = (DirectCast(info.GetValue("XmlSchema", GetType(String)), String))
+            Dim strSchema As String = (CStr(info.GetValue("XmlSchema", GetType(String))))
             If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
                 Dim ds As New Global.System.Data.DataSet()
                 ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
@@ -122,7 +122,7 @@ Namespace SimpleCustomFields
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Overrides Function Clone() As Global.System.Data.DataSet
-            Dim cln As CarsDBDataSet = (DirectCast(MyBase.Clone(), CarsDBDataSet))
+            Dim cln As CarsDBDataSet = (CType(MyBase.Clone(), CarsDBDataSet))
             cln.InitVars()
             cln.SchemaSerializationMode = Me.SchemaSerializationMode
             Return cln
@@ -244,7 +244,7 @@ Namespace SimpleCustomFields
                     dsSchema.Write(s1)
                     Dim schemas As System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator()
                     Do While schemas.MoveNext()
-                        schema = (DirectCast(schemas.Current, Global.System.Xml.Schema.XmlSchema))
+                        schema = (CType(schemas.Current, Global.System.Xml.Schema.XmlSchema))
                         s2.SetLength(0)
                         schema.Write(s2)
                         If (s1.Length = s2.Length) Then
@@ -468,7 +468,7 @@ Namespace SimpleCustomFields
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Default Public ReadOnly Property Item(ByVal index As Integer) As CarsRow
                 Get
-                    Return (DirectCast(Me.Rows(index), CarsRow))
+                    Return (CType(Me.Rows(index), CarsRow))
                 End Get
             End Property
 
@@ -491,7 +491,7 @@ Namespace SimpleCustomFields
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Public Function AddCarsRow(ByVal Trademark As String, ByVal Model As String, ByVal HP As Short, ByVal Liter As Double, ByVal Cyl As Byte, ByVal TransmissSpeedCount As Byte, ByVal TransmissAutomatic As String, ByVal MPG_City As Byte, ByVal MPG_Highway As Byte, ByVal Category As String, ByVal Description As String, ByVal Hyperlink As String, ByVal Picture() As Byte, ByVal Price As Decimal, ByVal RtfContent As String) As CarsRow
-                Dim rowCarsRow As CarsRow = (DirectCast(Me.NewRow(), CarsRow))
+                Dim rowCarsRow As CarsRow = (CType(Me.NewRow(), CarsRow))
                 Dim columnValuesArray() As Object = { Nothing, Trademark, Model, HP, Liter, Cyl, TransmissSpeedCount, TransmissAutomatic, MPG_City, MPG_Highway, Category, Description, Hyperlink, Picture, Price, RtfContent}
                 rowCarsRow.ItemArray = columnValuesArray
                 Me.Rows.Add(rowCarsRow)
@@ -500,12 +500,12 @@ Namespace SimpleCustomFields
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Public Function FindByID(ByVal ID As Integer) As CarsRow
-                Return (DirectCast(Me.Rows.Find(New Object() { ID}), CarsRow))
+                Return (CType(Me.Rows.Find(New Object() { ID}), CarsRow))
             End Function
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Public Overrides Function Clone() As Global.System.Data.DataTable
-                Dim cln As CarsDataTable = (DirectCast(MyBase.Clone(), CarsDataTable))
+                Dim cln As CarsDataTable = (CType(MyBase.Clone(), CarsDataTable))
                 cln.InitVars()
                 Return cln
             End Function
@@ -584,7 +584,7 @@ Namespace SimpleCustomFields
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Public Function NewCarsRow() As CarsRow
-                Return (DirectCast(Me.NewRow(), CarsRow))
+                Return (CType(Me.NewRow(), CarsRow))
             End Function
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
@@ -600,25 +600,25 @@ Namespace SimpleCustomFields
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
                 MyBase.OnRowChanged(e)
-                RaiseEvent CarsRowChanged(Me, New CarsRowChangeEvent((DirectCast(e.Row, CarsRow)), e.Action))
+                RaiseEvent CarsRowChanged(Me, New CarsRowChangeEvent((CType(e.Row, CarsRow)), e.Action))
             End Sub
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
                 MyBase.OnRowChanging(e)
-                RaiseEvent CarsRowChanging(Me, New CarsRowChangeEvent((DirectCast(e.Row, CarsRow)), e.Action))
+                RaiseEvent CarsRowChanging(Me, New CarsRowChangeEvent((CType(e.Row, CarsRow)), e.Action))
             End Sub
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
                 MyBase.OnRowDeleted(e)
-                RaiseEvent CarsRowDeleted(Me, New CarsRowChangeEvent((DirectCast(e.Row, CarsRow)), e.Action))
+                RaiseEvent CarsRowDeleted(Me, New CarsRowChangeEvent((CType(e.Row, CarsRow)), e.Action))
             End Sub
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
                 MyBase.OnRowDeleting(e)
-                RaiseEvent CarsRowDeleting(Me, New CarsRowChangeEvent((DirectCast(e.Row, CarsRow)), e.Action))
+                RaiseEvent CarsRowDeleting(Me, New CarsRowChangeEvent((CType(e.Row, CarsRow)), e.Action))
             End Sub
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
@@ -660,7 +660,7 @@ Namespace SimpleCustomFields
                         dsSchema.Write(s1)
                         Dim schemas As System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator()
                         Do While schemas.MoveNext()
-                            schema = (DirectCast(schemas.Current, Global.System.Xml.Schema.XmlSchema))
+                            schema = (CType(schemas.Current, Global.System.Xml.Schema.XmlSchema))
                             s2.SetLength(0)
                             schema.Write(s2)
                             If (s1.Length = s2.Length) Then
@@ -879,7 +879,7 @@ Namespace SimpleCustomFields
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Default Public ReadOnly Property Item(ByVal index As Integer) As CarSchedulingRow
                 Get
-                    Return (DirectCast(Me.Rows(index), CarSchedulingRow))
+                    Return (CType(Me.Rows(index), CarSchedulingRow))
                 End Get
             End Property
 
@@ -902,7 +902,7 @@ Namespace SimpleCustomFields
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Public Function AddCarSchedulingRow(ByVal parentCarsRowByCarsCarScheduling As CarsRow, ByVal UserId As Integer, ByVal Status As Integer, ByVal Subject As String, ByVal Description As String, ByVal Label As Integer, ByVal StartTime As Date, ByVal EndTime As Date, ByVal Location As String, ByVal AllDay As Boolean, ByVal EventType As Integer, ByVal RecurrenceInfo As String, ByVal ReminderInfo As String, ByVal Price As Decimal, ByVal ContactInfo As String) As CarSchedulingRow
-                Dim rowCarSchedulingRow As CarSchedulingRow = (DirectCast(Me.NewRow(), CarSchedulingRow))
+                Dim rowCarSchedulingRow As CarSchedulingRow = (CType(Me.NewRow(), CarSchedulingRow))
                 Dim columnValuesArray() As Object = { Nothing, Nothing, UserId, Status, Subject, Description, Label, StartTime, EndTime, Location, AllDay, EventType, RecurrenceInfo, ReminderInfo, Price, ContactInfo}
                 If (parentCarsRowByCarsCarScheduling IsNot Nothing) Then
                     columnValuesArray(1) = parentCarsRowByCarsCarScheduling(0)
@@ -914,12 +914,12 @@ Namespace SimpleCustomFields
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Public Function FindByID(ByVal ID As Integer) As CarSchedulingRow
-                Return (DirectCast(Me.Rows.Find(New Object() { ID}), CarSchedulingRow))
+                Return (CType(Me.Rows.Find(New Object() { ID}), CarSchedulingRow))
             End Function
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Public Overrides Function Clone() As Global.System.Data.DataTable
-                Dim cln As CarSchedulingDataTable = (DirectCast(MyBase.Clone(), CarSchedulingDataTable))
+                Dim cln As CarSchedulingDataTable = (CType(MyBase.Clone(), CarSchedulingDataTable))
                 cln.InitVars()
                 Return cln
             End Function
@@ -997,7 +997,7 @@ Namespace SimpleCustomFields
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Public Function NewCarSchedulingRow() As CarSchedulingRow
-                Return (DirectCast(Me.NewRow(), CarSchedulingRow))
+                Return (CType(Me.NewRow(), CarSchedulingRow))
             End Function
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
@@ -1013,25 +1013,25 @@ Namespace SimpleCustomFields
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
                 MyBase.OnRowChanged(e)
-                RaiseEvent CarSchedulingRowChanged(Me, New CarSchedulingRowChangeEvent((DirectCast(e.Row, CarSchedulingRow)), e.Action))
+                RaiseEvent CarSchedulingRowChanged(Me, New CarSchedulingRowChangeEvent((CType(e.Row, CarSchedulingRow)), e.Action))
             End Sub
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
                 MyBase.OnRowChanging(e)
-                RaiseEvent CarSchedulingRowChanging(Me, New CarSchedulingRowChangeEvent((DirectCast(e.Row, CarSchedulingRow)), e.Action))
+                RaiseEvent CarSchedulingRowChanging(Me, New CarSchedulingRowChangeEvent((CType(e.Row, CarSchedulingRow)), e.Action))
             End Sub
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
                 MyBase.OnRowDeleted(e)
-                RaiseEvent CarSchedulingRowDeleted(Me, New CarSchedulingRowChangeEvent((DirectCast(e.Row, CarSchedulingRow)), e.Action))
+                RaiseEvent CarSchedulingRowDeleted(Me, New CarSchedulingRowChangeEvent((CType(e.Row, CarSchedulingRow)), e.Action))
             End Sub
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
                 MyBase.OnRowDeleting(e)
-                RaiseEvent CarSchedulingRowDeleting(Me, New CarSchedulingRowChangeEvent((DirectCast(e.Row, CarSchedulingRow)), e.Action))
+                RaiseEvent CarSchedulingRowDeleting(Me, New CarSchedulingRowChangeEvent((CType(e.Row, CarSchedulingRow)), e.Action))
             End Sub
 
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
@@ -1073,7 +1073,7 @@ Namespace SimpleCustomFields
                         dsSchema.Write(s1)
                         Dim schemas As System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator()
                         Do While schemas.MoveNext()
-                            schema = (DirectCast(schemas.Current, Global.System.Xml.Schema.XmlSchema))
+                            schema = (CType(schemas.Current, Global.System.Xml.Schema.XmlSchema))
                             s2.SetLength(0)
                             schema.Write(s2)
                             If (s1.Length = s2.Length) Then
@@ -1118,7 +1118,7 @@ Namespace SimpleCustomFields
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Public Property ID() As Integer
                 Get
-                    Return (DirectCast(Me(Me.tableCars.IDColumn), Integer))
+                    Return (CInt((Me(Me.tableCars.IDColumn))))
                 End Get
                 Set(ByVal value As Integer)
                     Me(Me.tableCars.IDColumn) = value
@@ -1129,7 +1129,7 @@ Namespace SimpleCustomFields
             Public Property Trademark() As String
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCars.TrademarkColumn), String))
+                        Return (CStr(Me(Me.tableCars.TrademarkColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'Trademark' in table 'Cars' is DBNull.", e)
                     End Try
@@ -1143,7 +1143,7 @@ Namespace SimpleCustomFields
             Public Property Model() As String
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCars.ModelColumn), String))
+                        Return (CStr(Me(Me.tableCars.ModelColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'Model' in table 'Cars' is DBNull.", e)
                     End Try
@@ -1157,7 +1157,7 @@ Namespace SimpleCustomFields
             Public Property HP() As Short
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCars.HPColumn), Short))
+                        Return (CShort(Math.Truncate(Me(Me.tableCars.HPColumn))))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'HP' in table 'Cars' is DBNull.", e)
                     End Try
@@ -1171,7 +1171,7 @@ Namespace SimpleCustomFields
             Public Property Liter() As Double
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCars.LiterColumn), Double))
+                        Return (CDbl(Me(Me.tableCars.LiterColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'Liter' in table 'Cars' is DBNull.", e)
                     End Try
@@ -1185,7 +1185,7 @@ Namespace SimpleCustomFields
             Public Property Cyl() As Byte
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCars.CylColumn), Byte))
+                        Return (CByte(Me(Me.tableCars.CylColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'Cyl' in table 'Cars' is DBNull.", e)
                     End Try
@@ -1199,7 +1199,7 @@ Namespace SimpleCustomFields
             Public Property TransmissSpeedCount() As Byte
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCars.TransmissSpeedCountColumn), Byte))
+                        Return (CByte(Me(Me.tableCars.TransmissSpeedCountColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'TransmissSpeedCount' in table 'Cars' is DBNull.", e)
                     End Try
@@ -1213,7 +1213,7 @@ Namespace SimpleCustomFields
             Public Property TransmissAutomatic() As String
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCars.TransmissAutomaticColumn), String))
+                        Return (CStr(Me(Me.tableCars.TransmissAutomaticColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'TransmissAutomatic' in table 'Cars' is DBNull.", e)
                     End Try
@@ -1227,7 +1227,7 @@ Namespace SimpleCustomFields
             Public Property MPG_City() As Byte
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCars.MPG_CityColumn), Byte))
+                        Return (CByte(Me(Me.tableCars.MPG_CityColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'MPG_City' in table 'Cars' is DBNull.", e)
                     End Try
@@ -1241,7 +1241,7 @@ Namespace SimpleCustomFields
             Public Property MPG_Highway() As Byte
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCars.MPG_HighwayColumn), Byte))
+                        Return (CByte(Me(Me.tableCars.MPG_HighwayColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'MPG_Highway' in table 'Cars' is DBNull.", e)
                     End Try
@@ -1255,7 +1255,7 @@ Namespace SimpleCustomFields
             Public Property Category() As String
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCars.CategoryColumn), String))
+                        Return (CStr(Me(Me.tableCars.CategoryColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'Category' in table 'Cars' is DBNull.", e)
                     End Try
@@ -1269,7 +1269,7 @@ Namespace SimpleCustomFields
             Public Property Description() As String
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCars.DescriptionColumn), String))
+                        Return (CStr(Me(Me.tableCars.DescriptionColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'Description' in table 'Cars' is DBNull.", e)
                     End Try
@@ -1283,7 +1283,7 @@ Namespace SimpleCustomFields
             Public Property Hyperlink() As String
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCars.HyperlinkColumn), String))
+                        Return (CStr(Me(Me.tableCars.HyperlinkColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'Hyperlink' in table 'Cars' is DBNull.", e)
                     End Try
@@ -1297,7 +1297,7 @@ Namespace SimpleCustomFields
             Public Property Picture() As Byte()
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCars.PictureColumn), Byte()))
+                        Return (CType(Me(Me.tableCars.PictureColumn), Byte()))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'Picture' in table 'Cars' is DBNull.", e)
                     End Try
@@ -1311,7 +1311,7 @@ Namespace SimpleCustomFields
             Public Property Price() As Decimal
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCars.PriceColumn), Decimal))
+                        Return (CDec(Me(Me.tableCars.PriceColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'Price' in table 'Cars' is DBNull.", e)
                     End Try
@@ -1325,7 +1325,7 @@ Namespace SimpleCustomFields
             Public Property RtfContent() As String
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCars.RtfContentColumn), String))
+                        Return (CStr(Me(Me.tableCars.RtfContentColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'RtfContent' in table 'Cars' is DBNull.", e)
                     End Try
@@ -1512,7 +1512,7 @@ Namespace SimpleCustomFields
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Public Property ID() As Integer
                 Get
-                    Return (DirectCast(Me(Me.tableCarScheduling.IDColumn), Integer))
+                    Return (CInt((Me(Me.tableCarScheduling.IDColumn))))
                 End Get
                 Set(ByVal value As Integer)
                     Me(Me.tableCarScheduling.IDColumn) = value
@@ -1523,7 +1523,7 @@ Namespace SimpleCustomFields
             Public Property CarId() As Integer
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCarScheduling.CarIdColumn), Integer))
+                        Return (CInt((Me(Me.tableCarScheduling.CarIdColumn))))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'CarId' in table 'CarScheduling' is DBNull.", e)
                     End Try
@@ -1537,7 +1537,7 @@ Namespace SimpleCustomFields
             Public Property UserId() As Integer
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCarScheduling.UserIdColumn), Integer))
+                        Return (CInt((Me(Me.tableCarScheduling.UserIdColumn))))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'UserId' in table 'CarScheduling' is DBNull.", e)
                     End Try
@@ -1551,7 +1551,7 @@ Namespace SimpleCustomFields
             Public Property Status() As Integer
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCarScheduling.StatusColumn), Integer))
+                        Return (CInt((Me(Me.tableCarScheduling.StatusColumn))))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'Status' in table 'CarScheduling' is DBNull.", e)
                     End Try
@@ -1565,7 +1565,7 @@ Namespace SimpleCustomFields
             Public Property Subject() As String
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCarScheduling.SubjectColumn), String))
+                        Return (CStr(Me(Me.tableCarScheduling.SubjectColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'Subject' in table 'CarScheduling' is DBNull.", e)
                     End Try
@@ -1579,7 +1579,7 @@ Namespace SimpleCustomFields
             Public Property Description() As String
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCarScheduling.DescriptionColumn), String))
+                        Return (CStr(Me(Me.tableCarScheduling.DescriptionColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'Description' in table 'CarScheduling' is DBNull.", e)
                     End Try
@@ -1593,7 +1593,7 @@ Namespace SimpleCustomFields
             Public Property Label() As Integer
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCarScheduling.LabelColumn), Integer))
+                        Return (CInt((Me(Me.tableCarScheduling.LabelColumn))))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'Label' in table 'CarScheduling' is DBNull.", e)
                     End Try
@@ -1607,7 +1607,7 @@ Namespace SimpleCustomFields
             Public Property StartTime() As Date
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCarScheduling.StartTimeColumn), Global.System.DateTime))
+                        Return (CDate(Me(Me.tableCarScheduling.StartTimeColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'StartTime' in table 'CarScheduling' is DBNull.", e)
                     End Try
@@ -1621,7 +1621,7 @@ Namespace SimpleCustomFields
             Public Property EndTime() As Date
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCarScheduling.EndTimeColumn), Global.System.DateTime))
+                        Return (CDate(Me(Me.tableCarScheduling.EndTimeColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'EndTime' in table 'CarScheduling' is DBNull.", e)
                     End Try
@@ -1635,7 +1635,7 @@ Namespace SimpleCustomFields
             Public Property Location() As String
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCarScheduling.LocationColumn), String))
+                        Return (CStr(Me(Me.tableCarScheduling.LocationColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'Location' in table 'CarScheduling' is DBNull.", e)
                     End Try
@@ -1649,7 +1649,7 @@ Namespace SimpleCustomFields
             Public Property AllDay() As Boolean
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCarScheduling.AllDayColumn), Boolean))
+                        Return (CBool(Me(Me.tableCarScheduling.AllDayColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'AllDay' in table 'CarScheduling' is DBNull.", e)
                     End Try
@@ -1663,7 +1663,7 @@ Namespace SimpleCustomFields
             Public Property EventType() As Integer
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCarScheduling.EventTypeColumn), Integer))
+                        Return (CInt((Me(Me.tableCarScheduling.EventTypeColumn))))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'EventType' in table 'CarScheduling' is DBNull.", e)
                     End Try
@@ -1677,7 +1677,7 @@ Namespace SimpleCustomFields
             Public Property RecurrenceInfo() As String
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCarScheduling.RecurrenceInfoColumn), String))
+                        Return (CStr(Me(Me.tableCarScheduling.RecurrenceInfoColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'RecurrenceInfo' in table 'CarScheduling' is DBNull.", e)
                     End Try
@@ -1691,7 +1691,7 @@ Namespace SimpleCustomFields
             Public Property ReminderInfo() As String
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCarScheduling.ReminderInfoColumn), String))
+                        Return (CStr(Me(Me.tableCarScheduling.ReminderInfoColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'ReminderInfo' in table 'CarScheduling' is DBNull.", e)
                     End Try
@@ -1705,7 +1705,7 @@ Namespace SimpleCustomFields
             Public Property Price() As Decimal
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCarScheduling.PriceColumn), Decimal))
+                        Return (CDec(Me(Me.tableCarScheduling.PriceColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'Price' in table 'CarScheduling' is DBNull.", e)
                     End Try
@@ -1719,7 +1719,7 @@ Namespace SimpleCustomFields
             Public Property ContactInfo() As String
                 Get
                     Try
-                        Return (DirectCast(Me(Me.tableCarScheduling.ContactInfoColumn), String))
+                        Return (CStr(Me(Me.tableCarScheduling.ContactInfoColumn)))
                     Catch e As Global.System.InvalidCastException
                         Throw New Global.System.Data.StrongTypingException("The value for column 'ContactInfo' in table 'CarScheduling' is DBNull.", e)
                     End Try
@@ -1732,7 +1732,7 @@ Namespace SimpleCustomFields
             <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
             Public Property CarsRow() As CarsRow
                 Get
-                    Return (DirectCast(Me.GetParentRow(Me.Table.ParentRelations("CarsCarScheduling")), CarsRow))
+                    Return (CType(Me.GetParentRow(Me.Table.ParentRelations("CarsCarScheduling")), CarsRow))
                 End Get
                 Set(ByVal value As CarsRow)
                     Me.SetParentRow(value, Me.Table.ParentRelations("CarsCarScheduling"))
@@ -2211,87 +2211,87 @@ Namespace SimpleCustomFields.CarsDBDataSetTableAdapters
         Public Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_Trademark As String, ByVal Original_Model As String, ByVal Original_HP? As Short, ByVal Original_Liter? As Double, ByVal Original_Cyl? As Byte, ByVal Original_TransmissSpeedCount? As Byte, ByVal Original_TransmissAutomatic As String, ByVal Original_MPG_City? As Byte, ByVal Original_MPG_Highway? As Byte, ByVal Original_Category As String, ByVal Original_Hyperlink As String, ByVal Original_Price? As Decimal) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = (CInt(Original_ID))
             If (Original_Trademark Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(1).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(1).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(2).Value = (CStr(Original_Trademark))
             End If
             If (Original_Model Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(3).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(3).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(4).Value = (CStr(Original_Model))
             End If
             If (Original_HP.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(5).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(6).Value = (CShort(Original_HP.Value))
             Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(5).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
             If (Original_Liter.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(7).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(8).Value = (CDbl(Original_Liter.Value))
             Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(7).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
             If (Original_Cyl.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(9).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(9).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(10).Value = (CByte(Original_Cyl.Value))
             Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(9).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
             If (Original_TransmissSpeedCount.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(11).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(12).Value = (CByte(Original_TransmissSpeedCount.Value))
             Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(11).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
             End If
             If (Original_TransmissAutomatic Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(13).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(13).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(13).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(13).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(14).Value = (CStr(Original_TransmissAutomatic))
             End If
             If (Original_MPG_City.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(15).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(15).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(16).Value = (CByte(Original_MPG_City.Value))
             Else
-                Me.Adapter.DeleteCommand.Parameters(15).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(15).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
             End If
             If (Original_MPG_Highway.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(17).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(17).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(18).Value = (CByte(Original_MPG_Highway.Value))
             Else
-                Me.Adapter.DeleteCommand.Parameters(17).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(17).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
             End If
             If (Original_Category Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(19).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(19).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(19).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(19).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(20).Value = (CStr(Original_Category))
             End If
             If (Original_Hyperlink Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(21).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(21).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(21).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(21).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(22).Value = (CStr(Original_Hyperlink))
             End If
             If (Original_Price.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(23).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(23).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(24).Value = (CDec(Original_Price.Value))
             Else
-                Me.Adapter.DeleteCommand.Parameters(23).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(23).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(24).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
@@ -2478,87 +2478,87 @@ Namespace SimpleCustomFields.CarsDBDataSetTableAdapters
             End If
             Me.Adapter.UpdateCommand.Parameters(15).Value = (CInt(Original_ID))
             If (Original_Trademark Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(16).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(16).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(17).Value = (CStr(Original_Trademark))
             End If
             If (Original_Model Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(18).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(18).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(19).Value = (CStr(Original_Model))
             End If
             If (Original_HP.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(20).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(21).Value = (CShort(Original_HP.Value))
             Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(20).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
             End If
             If (Original_Liter.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(22).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(22).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(23).Value = (CDbl(Original_Liter.Value))
             Else
-                Me.Adapter.UpdateCommand.Parameters(22).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(22).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
             End If
             If (Original_Cyl.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(24).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(24).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(25).Value = (CByte(Original_Cyl.Value))
             Else
-                Me.Adapter.UpdateCommand.Parameters(24).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(24).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
             End If
             If (Original_TransmissSpeedCount.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(26).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(26).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(27).Value = (CByte(Original_TransmissSpeedCount.Value))
             Else
-                Me.Adapter.UpdateCommand.Parameters(26).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(26).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
             End If
             If (Original_TransmissAutomatic Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(28).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(28).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(28).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(28).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(29).Value = (CStr(Original_TransmissAutomatic))
             End If
             If (Original_MPG_City.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(30).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(30).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(31).Value = (CByte(Original_MPG_City.Value))
             Else
-                Me.Adapter.UpdateCommand.Parameters(30).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(30).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
             End If
             If (Original_MPG_Highway.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(32).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(32).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(33).Value = (CByte(Original_MPG_Highway.Value))
             Else
-                Me.Adapter.UpdateCommand.Parameters(32).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(32).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
             End If
             If (Original_Category Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(34).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(34).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(34).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(34).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(35).Value = (CStr(Original_Category))
             End If
             If (Original_Hyperlink Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(36).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(36).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(36).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(36).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(37).Value = (CStr(Original_Hyperlink))
             End If
             If (Original_Price.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(38).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(38).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(39).Value = (CDec(Original_Price.Value))
             Else
-                Me.Adapter.UpdateCommand.Parameters(38).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(38).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(39).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
@@ -2825,75 +2825,75 @@ Namespace SimpleCustomFields.CarsDBDataSetTableAdapters
         Public Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_CarId? As Integer, ByVal Original_UserId? As Integer, ByVal Original_Status? As Integer, ByVal Original_Subject As String, ByVal Original_Label? As Integer, ByVal Original_StartTime? As Global.System.DateTime, ByVal Original_EndTime? As Global.System.DateTime, ByVal Original_Location As String, ByVal Original_AllDay As Boolean, ByVal Original_EventType? As Integer, ByVal Original_Price? As Decimal) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = (CInt(Original_ID))
             If (Original_CarId.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(1).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(2).Value = (CInt(Original_CarId.Value))
             Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(1).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
             If (Original_UserId.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(3).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(4).Value = (CInt(Original_UserId.Value))
             Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(3).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
             If (Original_Status.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(5).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(6).Value = (CInt(Original_Status.Value))
             Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(5).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
             If (Original_Subject Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(7).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(7).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(8).Value = (CStr(Original_Subject))
             End If
             If (Original_Label.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(9).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(9).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(10).Value = (CInt(Original_Label.Value))
             Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(9).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
             If (Original_StartTime.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(11).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(12).Value = (CDate(Original_StartTime.Value))
             Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(11).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
             End If
             If (Original_EndTime.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(13).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(13).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(14).Value = (CDate(Original_EndTime.Value))
             Else
-                Me.Adapter.DeleteCommand.Parameters(13).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(13).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
             If (Original_Location Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(15).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(15).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(15).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(15).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(16).Value = (CStr(Original_Location))
             End If
-            Me.Adapter.DeleteCommand.Parameters(17).Value = (DirectCast(0, Object))
+            Me.Adapter.DeleteCommand.Parameters(17).Value = (CObj(0))
             Me.Adapter.DeleteCommand.Parameters(18).Value = (CBool(Original_AllDay))
             If (Original_EventType.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(19).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(19).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(20).Value = (CInt(Original_EventType.Value))
             Else
-                Me.Adapter.DeleteCommand.Parameters(19).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(19).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
             End If
             If (Original_Price.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(21).Value = (DirectCast(0, Object))
+                Me.Adapter.DeleteCommand.Parameters(21).Value = (CObj(0))
                 Me.Adapter.DeleteCommand.Parameters(22).Value = (CDec(Original_Price.Value))
             Else
-                Me.Adapter.DeleteCommand.Parameters(21).Value = (DirectCast(1, Object))
+                Me.Adapter.DeleteCommand.Parameters(21).Value = (CObj(1))
                 Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
@@ -3072,75 +3072,75 @@ Namespace SimpleCustomFields.CarsDBDataSetTableAdapters
             End If
             Me.Adapter.UpdateCommand.Parameters(15).Value = (CInt(Original_ID))
             If (Original_CarId.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(16).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(17).Value = (CInt(Original_CarId.Value))
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(16).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             End If
             If (Original_UserId.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(18).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(19).Value = (CInt(Original_UserId.Value))
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(18).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             End If
             If (Original_Status.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(20).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(21).Value = (CInt(Original_Status.Value))
             Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(20).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
             End If
             If (Original_Subject Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(22).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(22).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(22).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(22).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(23).Value = (CStr(Original_Subject))
             End If
             If (Original_Label.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(24).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(24).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(25).Value = (CInt(Original_Label.Value))
             Else
-                Me.Adapter.UpdateCommand.Parameters(24).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(24).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
             End If
             If (Original_StartTime.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(26).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(26).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(27).Value = (CDate(Original_StartTime.Value))
             Else
-                Me.Adapter.UpdateCommand.Parameters(26).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(26).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
             End If
             If (Original_EndTime.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(28).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(28).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(29).Value = (CDate(Original_EndTime.Value))
             Else
-                Me.Adapter.UpdateCommand.Parameters(28).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(28).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
             End If
             If (Original_Location Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(30).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(30).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(30).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(30).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(31).Value = (CStr(Original_Location))
             End If
-            Me.Adapter.UpdateCommand.Parameters(32).Value = (DirectCast(0, Object))
+            Me.Adapter.UpdateCommand.Parameters(32).Value = (CObj(0))
             Me.Adapter.UpdateCommand.Parameters(33).Value = (CBool(Original_AllDay))
             If (Original_EventType.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(34).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(34).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(35).Value = (CInt(Original_EventType.Value))
             Else
-                Me.Adapter.UpdateCommand.Parameters(34).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(34).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
             End If
             If (Original_Price.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(36).Value = (DirectCast(0, Object))
+                Me.Adapter.UpdateCommand.Parameters(36).Value = (CObj(0))
                 Me.Adapter.UpdateCommand.Parameters(37).Value = (CDec(Original_Price.Value))
             Else
-                Me.Adapter.UpdateCommand.Parameters(36).Value = (DirectCast(1, Object))
+                Me.Adapter.UpdateCommand.Parameters(36).Value = (CObj(1))
                 Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
@@ -3159,4 +3159,4 @@ Namespace SimpleCustomFields.CarsDBDataSetTableAdapters
     End Class
 End Namespace
 
-'#pragma warning restore 1591
+#Enable Warning 1591

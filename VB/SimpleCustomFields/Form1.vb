@@ -26,7 +26,7 @@ Namespace SimpleCustomFields
             Me.schedulerControl1.Start = New Date(2010, 07, 01)
         End Sub
 
-        Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+        Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
             ' TODO: This line of code loads data into the 'carsDBDataSet.Cars' table. You can move, or remove it, as needed.
             Me.carsTableAdapter.Fill(Me.carsDBDataSet_Renamed.Cars)
             ' TODO: This line of code loads data into the 'carsDBDataSet.CarScheduling' table. You can move, or remove it, as needed.
