@@ -27,7 +27,7 @@
             Dim timeRuler1 As New DevExpress.XtraScheduler.TimeRuler()
             Dim timeRuler2 As New DevExpress.XtraScheduler.TimeRuler()
             Me.schedulerControl1 = New DevExpress.XtraScheduler.SchedulerControl()
-            Me.schedulerStorage1 = New DevExpress.XtraScheduler.SchedulerStorage(Me.components)
+            Me.schedulerDataStorage1 = New DevExpress.XtraScheduler.SchedulerDataStorage(Me.components)
             Me.carSchedulingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
             Me.carsDBDataSet_Renamed = New SimpleCustomFields.CarsDBDataSet()
             Me.carsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -35,7 +35,7 @@
             Me.carSchedulingTableAdapter = New SimpleCustomFields.CarsDBDataSetTableAdapters.CarSchedulingTableAdapter()
             Me.carsTableAdapter = New SimpleCustomFields.CarsDBDataSetTableAdapters.CarsTableAdapter()
             CType(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.schedulerDataStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.carSchedulingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.carsDBDataSet_Renamed, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.carsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,7 +50,7 @@
             Me.schedulerControl1.Name = "schedulerControl1"
             Me.schedulerControl1.Size = New System.Drawing.Size(699, 561)
             Me.schedulerControl1.Start = New Date(2010, 7, 1, 0, 0, 0, 0)
-            Me.schedulerControl1.Storage = Me.schedulerStorage1
+            Me.schedulerControl1.DataStorage = Me.schedulerDataStorage1
             Me.schedulerControl1.TabIndex = 0
             Me.schedulerControl1.Text = "schedulerControl1"
             Me.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler1)
@@ -58,25 +58,25 @@
             ' 
             ' schedulerStorage1
             ' 
-            Me.schedulerStorage1.Appointments.CustomFieldMappings.Add(New DevExpress.XtraScheduler.AppointmentCustomFieldMapping("Amount", "Price"))
-            Me.schedulerStorage1.Appointments.CustomFieldMappings.Add(New DevExpress.XtraScheduler.AppointmentCustomFieldMapping("ContactInfo", "ContactInfo"))
-            Me.schedulerStorage1.Appointments.DataSource = Me.carSchedulingBindingSource
-            Me.schedulerStorage1.Appointments.Mappings.AllDay = "AllDay"
-            Me.schedulerStorage1.Appointments.Mappings.Description = "Description"
-            Me.schedulerStorage1.Appointments.Mappings.End = "EndTime"
-            Me.schedulerStorage1.Appointments.Mappings.Label = "Label"
-            Me.schedulerStorage1.Appointments.Mappings.Location = "Location"
-            Me.schedulerStorage1.Appointments.Mappings.RecurrenceInfo = "RecurrenceInfo"
-            Me.schedulerStorage1.Appointments.Mappings.ReminderInfo = "ReminderInfo"
-            Me.schedulerStorage1.Appointments.Mappings.ResourceId = "CarId"
-            Me.schedulerStorage1.Appointments.Mappings.Start = "StartTime"
-            Me.schedulerStorage1.Appointments.Mappings.Status = "Status"
-            Me.schedulerStorage1.Appointments.Mappings.Subject = "Subject"
-            Me.schedulerStorage1.Appointments.Mappings.Type = "EventType"
-            Me.schedulerStorage1.Resources.DataSource = Me.carsBindingSource
-            Me.schedulerStorage1.Resources.Mappings.Caption = "Trademark"
-            Me.schedulerStorage1.Resources.Mappings.Id = "ID"
-            Me.schedulerStorage1.Resources.Mappings.Image = "Picture"
+            Me.schedulerDataStorage1.Appointments.CustomFieldMappings.Add(New DevExpress.XtraScheduler.AppointmentCustomFieldMapping("Amount", "Price"))
+            Me.schedulerDataStorage1.Appointments.CustomFieldMappings.Add(New DevExpress.XtraScheduler.AppointmentCustomFieldMapping("ContactInfo", "ContactInfo"))
+            Me.schedulerDataStorage1.Appointments.DataSource = Me.carSchedulingBindingSource
+            Me.schedulerDataStorage1.Appointments.Mappings.AllDay = "AllDay"
+            Me.schedulerDataStorage1.Appointments.Mappings.Description = "Description"
+            Me.schedulerDataStorage1.Appointments.Mappings.End = "EndTime"
+            Me.schedulerDataStorage1.Appointments.Mappings.Label = "Label"
+            Me.schedulerDataStorage1.Appointments.Mappings.Location = "Location"
+            Me.schedulerDataStorage1.Appointments.Mappings.RecurrenceInfo = "RecurrenceInfo"
+            Me.schedulerDataStorage1.Appointments.Mappings.ReminderInfo = "ReminderInfo"
+            Me.schedulerDataStorage1.Appointments.Mappings.ResourceId = "CarId"
+            Me.schedulerDataStorage1.Appointments.Mappings.Start = "StartTime"
+            Me.schedulerDataStorage1.Appointments.Mappings.Status = "Status"
+            Me.schedulerDataStorage1.Appointments.Mappings.Subject = "Subject"
+            Me.schedulerDataStorage1.Appointments.Mappings.Type = "EventType"
+            Me.schedulerDataStorage1.Resources.DataSource = Me.carsBindingSource
+            Me.schedulerDataStorage1.Resources.Mappings.Caption = "Trademark"
+            Me.schedulerDataStorage1.Resources.Mappings.Id = "ID"
+            Me.schedulerDataStorage1.Resources.Mappings.Image = "Picture"
             ' 
             ' carSchedulingBindingSource
             ' 
@@ -123,7 +123,7 @@
             Me.Name = "Form1"
             Me.Text = "Custom Fields Example"
             CType(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.schedulerDataStorage1, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.carSchedulingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.carsDBDataSet_Renamed, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.carsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -136,7 +136,7 @@
         #End Region
 
         Private WithEvents schedulerControl1 As DevExpress.XtraScheduler.SchedulerControl
-        Private schedulerStorage1 As DevExpress.XtraScheduler.SchedulerStorage
+        Private schedulerDataStorage1 As DevExpress.XtraScheduler.SchedulerDataStorage
         Private dateNavigator1 As DevExpress.XtraScheduler.DateNavigator
 
         Private carsDBDataSet_Renamed As CarsDBDataSet

@@ -17,11 +17,11 @@ Namespace SimpleCustomFields
         Public Sub New()
             InitializeComponent()
 
-            AddHandler schedulerStorage1.AppointmentInserting, AddressOf SchedulerStorage1_AppointmentInserting
-            AddHandler schedulerStorage1.AppointmentsInserted, AddressOf OnApptChangedInsertedDeleted
-            AddHandler schedulerStorage1.AppointmentChanging, AddressOf SchedulerStorage1_AppointmentChanging
-            AddHandler schedulerStorage1.AppointmentsChanged, AddressOf OnApptChangedInsertedDeleted
-            AddHandler schedulerStorage1.AppointmentsDeleted, AddressOf OnApptChangedInsertedDeleted
+            AddHandler schedulerDataStorage1.AppointmentInserting, AddressOf SchedulerStorage1_AppointmentInserting
+            AddHandler schedulerDataStorage1.AppointmentsInserted, AddressOf OnApptChangedInsertedDeleted
+            AddHandler schedulerDataStorage1.AppointmentChanging, AddressOf SchedulerStorage1_AppointmentChanging
+            AddHandler schedulerDataStorage1.AppointmentsChanged, AddressOf OnApptChangedInsertedDeleted
+            AddHandler schedulerDataStorage1.AppointmentsDeleted, AddressOf OnApptChangedInsertedDeleted
 
             Me.schedulerControl1.Start = New Date(2010, 07, 01)
         End Sub
@@ -77,7 +77,7 @@ Namespace SimpleCustomFields
         #End Region ' #AppointmentInserting
         #Region "#AppointmentChanging"
         Private Sub SchedulerStorage1_AppointmentChanging(ByVal sender As Object, ByVal e As PersistentObjectCancelEventArgs)
-            Dim busyKey As Object = schedulerStorage1.Appointments.Statuses.GetByType(AppointmentStatusType.Busy).Id
+            Dim busyKey As Object = schedulerDataStorage1.Appointments.Statuses.GetByType(AppointmentStatusType.Busy).Id
             If CType(e.Object, Appointment).StatusKey Is busyKey Then
                 e.Cancel = True
             End If
