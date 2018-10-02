@@ -18,11 +18,11 @@ namespace SimpleCustomFields
         {
             InitializeComponent();
 
-            schedulerStorage1.AppointmentInserting += SchedulerStorage1_AppointmentInserting;
-            schedulerStorage1.AppointmentsInserted += new PersistentObjectsEventHandler(this.OnApptChangedInsertedDeleted);
-            schedulerStorage1.AppointmentChanging += SchedulerStorage1_AppointmentChanging;
-            schedulerStorage1.AppointmentsChanged += new PersistentObjectsEventHandler(this.OnApptChangedInsertedDeleted);
-            schedulerStorage1.AppointmentsDeleted += new PersistentObjectsEventHandler(this.OnApptChangedInsertedDeleted);
+            schedulerDataStorage1.AppointmentInserting += SchedulerStorage1_AppointmentInserting;
+            schedulerDataStorage1.AppointmentsInserted += new PersistentObjectsEventHandler(this.OnApptChangedInsertedDeleted);
+            schedulerDataStorage1.AppointmentChanging += SchedulerStorage1_AppointmentChanging;
+            schedulerDataStorage1.AppointmentsChanged += new PersistentObjectsEventHandler(this.OnApptChangedInsertedDeleted);
+            schedulerDataStorage1.AppointmentsDeleted += new PersistentObjectsEventHandler(this.OnApptChangedInsertedDeleted);
 
             this.schedulerControl1.Start = new DateTime(2010, 07, 01);
         }
@@ -87,7 +87,7 @@ namespace SimpleCustomFields
         #endregion #AppointmentInserting
         #region #AppointmentChanging
         private void SchedulerStorage1_AppointmentChanging(object sender, PersistentObjectCancelEventArgs e) {
-            object busyKey = schedulerStorage1.Appointments.Statuses.GetByType(AppointmentStatusType.Busy).Id;
+            object busyKey = schedulerDataStorage1.Appointments.Statuses.GetByType(AppointmentStatusType.Busy).Id;
             if (((Appointment)e.Object).StatusKey == busyKey) e.Cancel = true;
         }
         #endregion #AppointmentChanging

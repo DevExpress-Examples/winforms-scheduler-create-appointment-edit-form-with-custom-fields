@@ -32,7 +32,7 @@ namespace SimpleCustomFields
             DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
             DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
             this.schedulerControl1 = new DevExpress.XtraScheduler.SchedulerControl();
-            this.schedulerStorage1 = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
+            this.schedulerDataStorage1 = new DevExpress.XtraScheduler.SchedulerDataStorage(this.components);
             this.carSchedulingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carsDBDataSet = new SimpleCustomFields.CarsDBDataSet();
             this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -40,7 +40,7 @@ namespace SimpleCustomFields
             this.carSchedulingTableAdapter = new SimpleCustomFields.CarsDBDataSetTableAdapters.CarSchedulingTableAdapter();
             this.carsTableAdapter = new SimpleCustomFields.CarsDBDataSetTableAdapters.CarsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schedulerStorage1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carSchedulingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
@@ -55,7 +55,7 @@ namespace SimpleCustomFields
             this.schedulerControl1.Name = "schedulerControl1";
             this.schedulerControl1.Size = new System.Drawing.Size(699, 561);
             this.schedulerControl1.Start = new System.DateTime(2010, 7, 1, 0, 0, 0, 0);
-            this.schedulerControl1.Storage = this.schedulerStorage1;
+            this.schedulerControl1.DataStorage = this.schedulerDataStorage1;
             this.schedulerControl1.TabIndex = 0;
             this.schedulerControl1.Text = "schedulerControl1";
             this.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler1);
@@ -65,25 +65,25 @@ namespace SimpleCustomFields
             // 
             // schedulerStorage1
             // 
-            this.schedulerStorage1.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("Amount", "Price"));
-            this.schedulerStorage1.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("ContactInfo", "ContactInfo"));
-            this.schedulerStorage1.Appointments.DataSource = this.carSchedulingBindingSource;
-            this.schedulerStorage1.Appointments.Mappings.AllDay = "AllDay";
-            this.schedulerStorage1.Appointments.Mappings.Description = "Description";
-            this.schedulerStorage1.Appointments.Mappings.End = "EndTime";
-            this.schedulerStorage1.Appointments.Mappings.Label = "Label";
-            this.schedulerStorage1.Appointments.Mappings.Location = "Location";
-            this.schedulerStorage1.Appointments.Mappings.RecurrenceInfo = "RecurrenceInfo";
-            this.schedulerStorage1.Appointments.Mappings.ReminderInfo = "ReminderInfo";
-            this.schedulerStorage1.Appointments.Mappings.ResourceId = "CarId";
-            this.schedulerStorage1.Appointments.Mappings.Start = "StartTime";
-            this.schedulerStorage1.Appointments.Mappings.Status = "Status";
-            this.schedulerStorage1.Appointments.Mappings.Subject = "Subject";
-            this.schedulerStorage1.Appointments.Mappings.Type = "EventType";
-            this.schedulerStorage1.Resources.DataSource = this.carsBindingSource;
-            this.schedulerStorage1.Resources.Mappings.Caption = "Trademark";
-            this.schedulerStorage1.Resources.Mappings.Id = "ID";
-            this.schedulerStorage1.Resources.Mappings.Image = "Picture";
+            this.schedulerDataStorage1.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("Amount", "Price"));
+            this.schedulerDataStorage1.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("ContactInfo", "ContactInfo"));
+            this.schedulerDataStorage1.Appointments.DataSource = this.carSchedulingBindingSource;
+            this.schedulerDataStorage1.Appointments.Mappings.AllDay = "AllDay";
+            this.schedulerDataStorage1.Appointments.Mappings.Description = "Description";
+            this.schedulerDataStorage1.Appointments.Mappings.End = "EndTime";
+            this.schedulerDataStorage1.Appointments.Mappings.Label = "Label";
+            this.schedulerDataStorage1.Appointments.Mappings.Location = "Location";
+            this.schedulerDataStorage1.Appointments.Mappings.RecurrenceInfo = "RecurrenceInfo";
+            this.schedulerDataStorage1.Appointments.Mappings.ReminderInfo = "ReminderInfo";
+            this.schedulerDataStorage1.Appointments.Mappings.ResourceId = "CarId";
+            this.schedulerDataStorage1.Appointments.Mappings.Start = "StartTime";
+            this.schedulerDataStorage1.Appointments.Mappings.Status = "Status";
+            this.schedulerDataStorage1.Appointments.Mappings.Subject = "Subject";
+            this.schedulerDataStorage1.Appointments.Mappings.Type = "EventType";
+            this.schedulerDataStorage1.Resources.DataSource = this.carsBindingSource;
+            this.schedulerDataStorage1.Resources.Mappings.Caption = "Trademark";
+            this.schedulerDataStorage1.Resources.Mappings.Id = "ID";
+            this.schedulerDataStorage1.Resources.Mappings.Image = "Picture";
             // 
             // carSchedulingBindingSource
             // 
@@ -132,7 +132,7 @@ namespace SimpleCustomFields
             this.Text = "Custom Fields Example";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schedulerStorage1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carSchedulingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
@@ -145,7 +145,7 @@ namespace SimpleCustomFields
         #endregion
 
         private DevExpress.XtraScheduler.SchedulerControl schedulerControl1;
-        private DevExpress.XtraScheduler.SchedulerStorage schedulerStorage1;
+        private DevExpress.XtraScheduler.SchedulerDataStorage schedulerDataStorage1;
         private DevExpress.XtraScheduler.DateNavigator dateNavigator1;
         private CarsDBDataSet carsDBDataSet;
         private System.Windows.Forms.BindingSource carSchedulingBindingSource;
