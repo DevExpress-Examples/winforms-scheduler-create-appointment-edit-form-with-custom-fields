@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Form1.cs](./CS/SimpleCustomFields/Form1.cs) (VB: [Form1.vb](./VB/SimpleCustomFields/Form1.vb))
+* [MyAppointmentForm.cs](./CS/SimpleCustomFields/MyAppointmentForm.cs) (VB: [MyAppointmentForm.vb](./VB/SimpleCustomFields/MyAppointmentForm.vb))
+<!-- default file list end -->
 # How to use custom appointment fields in a custom editing form
 
 
