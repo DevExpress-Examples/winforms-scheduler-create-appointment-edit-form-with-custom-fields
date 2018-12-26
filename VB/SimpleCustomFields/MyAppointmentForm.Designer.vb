@@ -28,7 +28,7 @@
             Me.mruEdit1 = New DevExpress.XtraEditors.MRUEdit()
             Me.tbContact = New DevExpress.XtraEditors.MemoEdit()
             Me.lblContactInfo = New DevExpress.XtraEditors.LabelControl()
-            Me.carsDBDataSet_Renamed = New SimpleCustomFields.CarsDBDataSet()
+            Me.carsDBDataSet_Renamed = New CarsDBDataSet()
             CType(Me.chkAllDay.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.edtStartDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.edtStartDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()

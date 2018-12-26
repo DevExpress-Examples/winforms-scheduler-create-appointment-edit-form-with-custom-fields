@@ -29,11 +29,11 @@
             Me.schedulerControl1 = New DevExpress.XtraScheduler.SchedulerControl()
             Me.schedulerDataStorage1 = New DevExpress.XtraScheduler.SchedulerDataStorage(Me.components)
             Me.carSchedulingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-            Me.carsDBDataSet_Renamed = New SimpleCustomFields.CarsDBDataSet()
+            Me.carsDBDataSet_Renamed = New CarsDBDataSet()
             Me.carsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
             Me.dateNavigator1 = New DevExpress.XtraScheduler.DateNavigator()
-            Me.carSchedulingTableAdapter = New SimpleCustomFields.CarsDBDataSetTableAdapters.CarSchedulingTableAdapter()
-            Me.carsTableAdapter = New SimpleCustomFields.CarsDBDataSetTableAdapters.CarsTableAdapter()
+            Me.carSchedulingTableAdapter = New CarsDBDataSetTableAdapters.CarSchedulingTableAdapter()
+            Me.carsTableAdapter = New CarsDBDataSetTableAdapters.CarsTableAdapter()
             CType(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.schedulerDataStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.carSchedulingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,7 +95,7 @@
             ' 
             ' dateNavigator1
             ' 
-            Me.dateNavigator1.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+            Me.dateNavigator1.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
             Me.dateNavigator1.Dock = System.Windows.Forms.DockStyle.Right
             Me.dateNavigator1.FirstDayOfWeek = System.DayOfWeek.Sunday
             Me.dateNavigator1.Location = New System.Drawing.Point(699, 0)
@@ -115,7 +115,7 @@
             ' 
             ' Form1
             ' 
-            Me.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)
+            Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0F, 13.0F)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
             Me.ClientSize = New System.Drawing.Size(948, 561)
             Me.Controls.Add(Me.schedulerControl1)
@@ -133,7 +133,7 @@
 
         End Sub
 
-        #End Region
+#End Region
 
         Private WithEvents schedulerControl1 As DevExpress.XtraScheduler.SchedulerControl
         Private schedulerDataStorage1 As DevExpress.XtraScheduler.SchedulerDataStorage
@@ -141,9 +141,9 @@
 
         Private carsDBDataSet_Renamed As CarsDBDataSet
         Private carSchedulingBindingSource As System.Windows.Forms.BindingSource
-        Private carSchedulingTableAdapter As SimpleCustomFields.CarsDBDataSetTableAdapters.CarSchedulingTableAdapter
+        Private carSchedulingTableAdapter As CarsDBDataSetTableAdapters.CarSchedulingTableAdapter
         Private carsBindingSource As System.Windows.Forms.BindingSource
-        Private carsTableAdapter As SimpleCustomFields.CarsDBDataSetTableAdapters.CarsTableAdapter
+        Private carsTableAdapter As CarsDBDataSetTableAdapters.CarsTableAdapter
     End Class
 End Namespace
 
