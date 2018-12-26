@@ -64,13 +64,13 @@ Namespace SimpleCustomFields
 		Private Sub schedulerStorage1_AppointmentInserting(ByVal sender As Object, ByVal e As PersistentObjectCancelEventArgs) Handles schedulerStorage1.AppointmentInserting
 			Dim apt As Appointment = (CType(e.Object, Appointment))
 			apt.Description += Constants.vbCrLf & "Inserting at " & String.Format("{0:g}", DateTime.Now)
-			apt.Description += Constants.vbCrLf & " Price: " & apt.CustomFields("Price")
-		End Sub
+            apt.Description += Constants.vbCrLf & " Price: " & apt.CustomFields("Price").ToString
+        End Sub
 
 		Private Sub schedulerStorage1_AppointmentChanging(ByVal sender As Object, ByVal e As PersistentObjectCancelEventArgs) Handles schedulerStorage1.AppointmentChanging
 			Dim apt As Appointment = (CType(e.Object, Appointment))
 			apt.Description += Constants.vbCrLf & "Changing at " & String.Format("{0:g}", DateTime.Now)
-			apt.Description += Constants.vbCrLf & " Price: " & apt.CustomFields("Price")
-		End Sub
+            apt.Description += Constants.vbCrLf & " Price: " & apt.CustomFields("Price").ToString
+        End Sub
 	End Class
 End Namespace
