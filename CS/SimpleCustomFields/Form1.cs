@@ -10,12 +10,9 @@ using System.Data.OleDb;
 using DevExpress.XtraScheduler;
 #endregion #usings
 
-namespace SimpleCustomFields
-{
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
+namespace SimpleCustomFields {
+    public partial class Form1 : Form {
+        public Form1() {
             InitializeComponent();
 
             schedulerDataStorage1.AppointmentInserting += SchedulerStorage1_AppointmentInserting;
@@ -27,8 +24,7 @@ namespace SimpleCustomFields
             this.schedulerControl1.Start = new DateTime(2010, 07, 01);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
+        private void Form1_Load(object sender, EventArgs e) {
             // TODO: This line of code loads data into the 'carsDBDataSet.Cars' table. You can move, or remove it, as needed.
             this.carsTableAdapter.Fill(this.carsDBDataSet.Cars);
             // TODO: This line of code loads data into the 'carsDBDataSet.CarScheduling' table. You can move, or remove it, as needed.
@@ -37,44 +33,35 @@ namespace SimpleCustomFields
 
         }
 
-        private void OnApptChangedInsertedDeleted(object sender, PersistentObjectsEventArgs e)
-        {
+        private void OnApptChangedInsertedDeleted(object sender, PersistentObjectsEventArgs e) {
             carSchedulingTableAdapter.Update(carsDBDataSet);
             carsDBDataSet.AcceptChanges();
         }
 
-        private void carSchedulingTableAdapter_RowUpdated(object sender, OleDbRowUpdatedEventArgs e)
-        {
-            if (e.Status == UpdateStatus.Continue && e.StatementType == StatementType.Insert)
-            {
+        private void carSchedulingTableAdapter_RowUpdated(object sender, OleDbRowUpdatedEventArgs e) {
+            if (e.Status == UpdateStatus.Continue && e.StatementType == StatementType.Insert) {
                 int id = 0;
                 using (OleDbCommand cmd = new OleDbCommand("SELECT @@IDENTITY",
-                    carSchedulingTableAdapter.Connection))
-                {
+                    carSchedulingTableAdapter.Connection)) {
                     id = (int)cmd.ExecuteScalar();
                 }
                 e.Row["ID"] = id;
             }
         }
         #region #EditAppointmentFormShowing
-        private void schedulerControl1_EditAppointmentFormShowing(object sender, AppointmentFormEventArgs e)
-        {
+        private void schedulerControl1_EditAppointmentFormShowing(object sender, AppointmentFormEventArgs e) {
             MyAppointmentForm form = new MyAppointmentForm(sender as SchedulerControl, e.Appointment, e.OpenRecurrenceForm);
-            try
-            {
+            try {
                 e.DialogResult = form.ShowDialog();
                 e.Handled = true;
-            }
-            finally
-            {
+            } finally {
                 form.Dispose();
             }
         }
         #endregion #EditAppointmentFormShowing
 
         #region #InitNewAppointment
-        private void schedulerControl1_InitNewAppointment(object sender, DevExpress.XtraScheduler.AppointmentEventArgs e)
-        {
+        private void schedulerControl1_InitNewAppointment(object sender, DevExpress.XtraScheduler.AppointmentEventArgs e) {
             e.Appointment.Description += "Created at runtime at " + String.Format("{0:g}", DateTime.Now);
             e.Appointment.CustomFields["Amount"] = 00.01d;
             e.Appointment.CustomFields["ContactInfo"] = "someone@somecompany.com";
@@ -87,8 +74,11 @@ namespace SimpleCustomFields
         #endregion #AppointmentInserting
         #region #AppointmentChanging
         private void SchedulerStorage1_AppointmentChanging(object sender, PersistentObjectCancelEventArgs e) {
+            if (((DevExpress.XtraScheduler.AdvPersistentObjectCancelEventArgs)e).PropertyName == "StatusKey") {
+                return;
+            }
             object busyKey = schedulerDataStorage1.Appointments.Statuses.GetByType(AppointmentStatusType.Busy).Id;
-            if (((Appointment)e.Object).StatusKey == busyKey) e.Cancel = true;
+            if (((Appointment)e.Object).StatusKey.Equals(busyKey)) e.Cancel = true;
         }
         #endregion #AppointmentChanging
     }
