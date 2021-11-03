@@ -8,7 +8,7 @@
 
 <p>Custom fields for appointments provide a way to associate arbitrary information with an appointment. This example represents a simple application that enables you to display, edit and save data contained in appointment custom fields. The application uses MS Access database as the data source.<br> 
   
-Custom field mappings are established at design time using <a href="http://documentation.devexpress.com/#WindowsForms/CustomDocument4227"><u>Mapping Wizards</u></a>.<br> Please refer to the following help articles for details:
+Custom field mappings are established at design time using <a href="http://documentation.devexpress.com/#WindowsForms/CustomDocument4227"><u>Mapping Wizards</u></a>. Please refer to the following help articles for details:
 * [Custom Fields](https://docs.devexpress.com/WindowsForms/17137/controls-and-libraries/scheduler/data-binding/mappings/custom-fields)
 * [How to: Create Appointments with Custom Fields](https://docs.devexpress.com/WindowsForms/5228/controls-and-libraries/scheduler/examples/data-binding/how-to-create-appointments-with-custom-fields)  
   
