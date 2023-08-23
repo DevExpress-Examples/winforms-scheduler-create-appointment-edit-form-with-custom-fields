@@ -29,6 +29,7 @@ namespace SimpleCustomFields {
             this.carsTableAdapter.Fill(this.carsDBDataSet.Cars);
             // TODO: This line of code loads data into the 'carsDBDataSet.CarScheduling' table. You can move, or remove it, as needed.
             this.carSchedulingTableAdapter.Fill(this.carsDBDataSet.CarScheduling);
+           
             carSchedulingTableAdapter.Adapter.RowUpdated += new OleDbRowUpdatedEventHandler(carSchedulingTableAdapter_RowUpdated);
 
         }

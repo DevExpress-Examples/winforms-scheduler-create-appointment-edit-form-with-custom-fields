@@ -33,7 +33,6 @@
             this.mruEdit1 = new DevExpress.XtraEditors.MRUEdit();
             this.tbContact = new DevExpress.XtraEditors.MemoEdit();
             this.lblContactInfo = new DevExpress.XtraEditors.LabelControl();
-            this.carsDBDataSet = new SimpleCustomFields.CarsDBDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.chkAllDay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties)).BeginInit();
@@ -59,7 +58,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.calcAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mruEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbContact.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carsDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLabel
@@ -213,11 +211,7 @@
             this.lblContactInfo.Size = new System.Drawing.Size(65, 13);
             this.lblContactInfo.TabIndex = 41;
             this.lblContactInfo.Text = "Contact Info:";
-            // 
-            // carsDBDataSet
-            // 
-            this.carsDBDataSet.DataSetName = "CarsDBDataSet";
-            this.carsDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+           
             // 
             // MyAppointmentForm
             // 
@@ -283,7 +277,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.calcAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mruEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbContact.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carsDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,6 +289,6 @@
         private DevExpress.XtraEditors.MRUEdit mruEdit1;
         private DevExpress.XtraEditors.MemoEdit tbContact;
         private DevExpress.XtraEditors.LabelControl lblContactInfo;
-        private CarsDBDataSet carsDBDataSet;
+      
     }
 }
