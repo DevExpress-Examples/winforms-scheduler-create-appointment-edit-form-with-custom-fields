@@ -3,14 +3,26 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E2782)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# How to use custom appointment fields in a custom editing form
+# WinForms Scheduler - Create an appointment edit form with custom fields
+
+[Custom fields](https://docs.devexpress.com/WindowsForms/17137/controls-and-libraries/scheduler/data-binding/mappings/custom-fields) allow you to display arbitrary information with appointments. This example shows how to use custom fields to display, edit, and save arbitrary information. The application uses an MS Access database as a data source. 
+
+In this example:
+
+* Custom field mappings are set up at design time using the **Mapping Wizard**. 
+* The [InitNewAppointment](https://docs.devexpress.com/WindowsForms/DevExpress.XtraScheduler.SchedulerControl.InitNewAppointment) event is handled to initialize custom fields.
+* The [AppointmentInserting](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentInserting) and [AppointmentChanging](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentChanging) events are handled to log changes and to prevent certain appointments from being created or modified.
+* Implemented a custom appointment form. The form derives form the `DevExpress.XtraScheduler.UI.AppointmentForm` class and includes additional UI controls that correspond to custom fields.
+* Implemented a custom form controller that loads and saves custom fields. The form controller derives from the `DevExpress.XtraScheduler.UI.AppointmentFormController` class and overrides certain methods.
 
 
-<p>Custom fields for appointments provide a way to associate arbitrary information with an appointment. This example represents a simple application that enables you to display, edit and save data contained in appointment custom fields. The application uses MS Access database as the data source.<br> 
-  
-Custom field mappings are established at design time using <a href="http://documentation.devexpress.com/#WindowsForms/CustomDocument4227"><u>Mapping Wizards</u></a>. Please refer to the following help articles for details:
-  <a href="https://docs.devexpress.com/WindowsForms/17137/controls-and-libraries/scheduler/data-binding/mappings/custom-fields"><u>Custom Fields</u></a>, 
-  <a href="https://docs.devexpress.com/WindowsForms/5228/controls-and-libraries/scheduler/examples/data-binding/how-to-create-appointments-with-custom-fields"><u>Create Appointments with Custom Fields</u></a>
-  
-The <a href="http://documentation.devexpress.com/#WindowsForms/DevExpressXtraSchedulerSchedulerControl_InitNewAppointmenttopic"><u>InitNewAppointment</u></a> event is handled to specify initial values for custom fields. The <a href="http://documentation.devexpress.com/#CoreLibraries/DevExpressXtraSchedulerSchedulerStorageBase_AppointmentInsertingtopic"><u>AppointmentInserting</u></a> and <a href="http://documentation.devexpress.com/#CoreLibraries/DevExpressXtraSchedulerSchedulerStorageBase_AppointmentChangingtopic"><u>AppointmentChanging</u></a> events are handled to log changes or to prevent certain appointments from being created or changed.<br> To work with custom fields, a new appointment form is implemented. It descends form the<strong> DevExpress.XtraScheduler.UI.AppointmentForm</strong>, includes additional controls required to represent custom fields. To load and save custom fields a custom form controller is implemented. It inherits from the <strong>DevExpress.XtraScheduler.UI.AppointmentFormController</strong> and overrides several methods to provide the required functionality.</p>
-<p><strong>See also:</strong><strong><br></strong><a href="https://www.devexpress.com/Support/Center/p/E382">Custom form, custom fields and custom actions on reminder alert</a></p>
+## Documentation
+
+* [Custom Fields](https://docs.devexpress.com/WindowsForms/17137/controls-and-libraries/scheduler/data-binding/mappings/custom-fields)
+* [How to: Create Appointments with Custom Fields](https://docs.devexpress.com/WindowsForms/5228/controls-and-libraries/scheduler/examples/data-binding/how-to-create-appointments-with-custom-fields)
+
+
+## See Also
+
+* [Custom form, custom fields and custom actions on reminder alert](https://www.devexpress.com/Support/Center/p/E382)
+* [How to Customize an Appointment Recurrence Form](https://docs.devexpress.com/WindowsForms/2880/controls-and-libraries/scheduler/examples/forms/how-to-create-a-custom-appointment-recurrence-form-method-1)
