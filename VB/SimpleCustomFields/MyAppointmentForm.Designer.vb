@@ -1,5 +1,7 @@
-﻿Namespace SimpleCustomFields
-    Partial Public Class MyAppointmentForm
+Namespace SimpleCustomFields
+
+    Partial Class MyAppointmentForm
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,14 +12,14 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+'#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
@@ -28,33 +30,33 @@
             Me.mruEdit1 = New DevExpress.XtraEditors.MRUEdit()
             Me.tbContact = New DevExpress.XtraEditors.MemoEdit()
             Me.lblContactInfo = New DevExpress.XtraEditors.LabelControl()
-            Me.carsDBDataSet_Renamed = New SimpleCustomFields.CarsDBDataSet()
-            DirectCast(Me.chkAllDay.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.edtStartDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.edtStartDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.edtEndDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.edtEndDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.edtStartTime.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.edtEndTime.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.edtLabel.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.edtShowTimeAs.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.tbSubject.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.edtResource.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.edtResources.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.edtResources.ResourcesCheckedListBoxControl, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.chkReminder.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.tbDescription.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.cbReminder.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.tbLocation.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.panel1, System.ComponentModel.ISupportInitialize).BeginInit()
+            Me.carsDBDataSet = New SimpleCustomFields.CarsDBDataSet()
+            CType((Me.chkAllDay.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.edtStartDate.Properties.CalendarTimeProperties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.edtStartDate.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.edtEndDate.Properties.CalendarTimeProperties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.edtEndDate.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.edtStartTime.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.edtEndTime.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.edtLabel.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.edtShowTimeAs.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.tbSubject.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.edtResource.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.edtResources.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.edtResources.ResourcesCheckedListBoxControl), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.chkReminder.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.tbDescription.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.cbReminder.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.tbLocation.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.panel1), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.panel1.SuspendLayout()
             Me.progressPanel.SuspendLayout()
-            DirectCast(Me.tbProgress, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.tbProgress.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.calcAmount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.mruEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.tbContact.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.carsDBDataSet_Renamed, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.tbProgress), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.tbProgress.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.calcAmount.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.mruEdit1.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.tbContact.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.carsDBDataSet), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' lblLabel
@@ -82,36 +84,24 @@
             ' 
             ' edtStartDate
             ' 
-            Me.edtStartDate.EditValue = New Date(2005, 3, 31, 0, 0, 0, 0)
-            Me.edtStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { _
-                New DevExpress.XtraEditors.Controls.EditorButton(), _
-                New DevExpress.XtraEditors.Controls.EditorButton(), _
-                New DevExpress.XtraEditors.Controls.EditorButton(), _
-                New DevExpress.XtraEditors.Controls.EditorButton(), _
-                New DevExpress.XtraEditors.Controls.EditorButton() _
-            })
+            Me.edtStartDate.EditValue = New System.DateTime(2005, 3, 31, 0, 0, 0, 0)
+            Me.edtStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(), New DevExpress.XtraEditors.Controls.EditorButton(), New DevExpress.XtraEditors.Controls.EditorButton(), New DevExpress.XtraEditors.Controls.EditorButton(), New DevExpress.XtraEditors.Controls.EditorButton()})
             Me.edtStartDate.Size = New System.Drawing.Size(126, 20)
             ' 
             ' edtEndDate
             ' 
-            Me.edtEndDate.EditValue = New Date(2005, 3, 31, 0, 0, 0, 0)
-            Me.edtEndDate.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { _
-                New DevExpress.XtraEditors.Controls.EditorButton(), _
-                New DevExpress.XtraEditors.Controls.EditorButton(), _
-                New DevExpress.XtraEditors.Controls.EditorButton(), _
-                New DevExpress.XtraEditors.Controls.EditorButton(), _
-                New DevExpress.XtraEditors.Controls.EditorButton() _
-            })
+            Me.edtEndDate.EditValue = New System.DateTime(2005, 3, 31, 0, 0, 0, 0)
+            Me.edtEndDate.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(), New DevExpress.XtraEditors.Controls.EditorButton(), New DevExpress.XtraEditors.Controls.EditorButton(), New DevExpress.XtraEditors.Controls.EditorButton(), New DevExpress.XtraEditors.Controls.EditorButton()})
             Me.edtEndDate.Size = New System.Drawing.Size(126, 20)
             ' 
             ' edtStartTime
             ' 
-            Me.edtStartTime.EditValue = New Date(2005, 3, 31, 0, 0, 0, 0)
+            Me.edtStartTime.EditValue = New System.DateTime(2005, 3, 31, 0, 0, 0, 0)
             Me.edtStartTime.Location = New System.Drawing.Point(230, 79)
             ' 
             ' edtEndTime
             ' 
-            Me.edtEndTime.EditValue = New Date(2005, 3, 31, 0, 0, 0, 0)
+            Me.edtEndTime.EditValue = New System.DateTime(2005, 3, 31, 0, 0, 0, 0)
             Me.edtEndTime.Location = New System.Drawing.Point(230, 103)
             ' 
             ' edtLabel
@@ -180,15 +170,16 @@
             ' 
             Me.calcAmount.Location = New System.Drawing.Point(96, 180)
             Me.calcAmount.Name = "calcAmount"
-            Me.calcAmount.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+            Me.calcAmount.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
             Me.calcAmount.Size = New System.Drawing.Size(100, 20)
             Me.calcAmount.TabIndex = 38
+            AddHandler Me.calcAmount.EditValueChanged, New System.EventHandler(AddressOf Me.calcAmount_EditValueChanged)
             ' 
             ' mruEdit1
             ' 
             Me.mruEdit1.Location = New System.Drawing.Point(352, 310)
             Me.mruEdit1.Name = "mruEdit1"
-            Me.mruEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+            Me.mruEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
             Me.mruEdit1.Size = New System.Drawing.Size(8, 20)
             Me.mruEdit1.TabIndex = 39
             ' 
@@ -198,6 +189,7 @@
             Me.tbContact.Name = "tbContact"
             Me.tbContact.Size = New System.Drawing.Size(182, 41)
             Me.tbContact.TabIndex = 40
+            AddHandler Me.tbContact.EditValueChanged, New System.EventHandler(AddressOf Me.tbContact_EditValueChanged)
             ' 
             ' lblContactInfo
             ' 
@@ -209,8 +201,8 @@
             ' 
             ' carsDBDataSet
             ' 
-            Me.carsDBDataSet_Renamed.DataSetName = "CarsDBDataSet"
-            Me.carsDBDataSet_Renamed.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+            Me.carsDBDataSet.DataSetName = "CarsDBDataSet"
+            Me.carsDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
             ' 
             ' MyAppointmentForm
             ' 
@@ -249,47 +241,49 @@
             Me.Controls.SetChildIndex(Me.panel1, 0)
             Me.Controls.SetChildIndex(Me.progressPanel, 0)
             Me.Controls.SetChildIndex(Me.tbDescription, 0)
-            DirectCast(Me.chkAllDay.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.edtStartDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.edtStartDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.edtEndDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.edtEndDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.edtStartTime.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.edtEndTime.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.edtLabel.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.edtShowTimeAs.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.tbSubject.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.edtResource.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.edtResources.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.edtResources.ResourcesCheckedListBoxControl, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.chkReminder.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.tbDescription.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.cbReminder.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.tbLocation.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.panel1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.chkAllDay.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.edtStartDate.Properties.CalendarTimeProperties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.edtStartDate.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.edtEndDate.Properties.CalendarTimeProperties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.edtEndDate.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.edtStartTime.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.edtEndTime.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.edtLabel.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.edtShowTimeAs.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.tbSubject.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.edtResource.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.edtResources.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.edtResources.ResourcesCheckedListBoxControl), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.chkReminder.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.tbDescription.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.cbReminder.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.tbLocation.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.panel1), System.ComponentModel.ISupportInitialize).EndInit()
             Me.panel1.ResumeLayout(False)
             Me.panel1.PerformLayout()
             Me.progressPanel.ResumeLayout(False)
             Me.progressPanel.PerformLayout()
-            DirectCast(Me.tbProgress.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.tbProgress, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.calcAmount.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.mruEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.tbContact.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.carsDBDataSet_Renamed, System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.tbProgress.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.tbProgress), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.calcAmount.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.mruEdit1.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.tbContact.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.carsDBDataSet), System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
             Me.PerformLayout()
-
         End Sub
 
-        #End Region
-
+'#End Region
         Private lblAmount As DevExpress.XtraEditors.LabelControl
-        Private WithEvents calcAmount As DevExpress.XtraEditors.CalcEdit
+
+        Private calcAmount As DevExpress.XtraEditors.CalcEdit
+
         Private mruEdit1 As DevExpress.XtraEditors.MRUEdit
-        Private WithEvents tbContact As DevExpress.XtraEditors.MemoEdit
+
+        Private tbContact As DevExpress.XtraEditors.MemoEdit
+
         Private lblContactInfo As DevExpress.XtraEditors.LabelControl
 
-        Private carsDBDataSet_Renamed As CarsDBDataSet
+        Private carsDBDataSet As SimpleCustomFields.CarsDBDataSet
     End Class
 End Namespace
