@@ -12,8 +12,8 @@ In this example:
 * Custom field mappings are set up at design time using the **Mapping Wizard**. 
 * The [InitNewAppointment](https://docs.devexpress.com/WindowsForms/DevExpress.XtraScheduler.SchedulerControl.InitNewAppointment) event is handled to initialize custom fields.
 * The [AppointmentInserting](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentInserting) and [AppointmentChanging](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentChanging) events are handled to log changes and to prevent certain appointments from being created or modified.
-* Implemented a custom appointment form. The form derives form the `DevExpress.XtraScheduler.UI.AppointmentForm` class and includes additional UI controls that correspond to custom fields.
-* Implemented a custom form controller that loads and saves custom fields. The form controller derives from the `DevExpress.XtraScheduler.UI.AppointmentFormController` class and overrides certain methods.
+* A custom appointment form is implemented. The form derives form the `DevExpress.XtraScheduler.UI.AppointmentForm` class and includes additional UI controls that correspond to custom fields.
+* A custom form controller that loads and saves custom fields is implemented. The form controller derives from the `DevExpress.XtraScheduler.UI.AppointmentFormController` class and overrides certain methods.
 
 
 ## Documentation
